@@ -18,8 +18,8 @@ router.post('/register', async (req, res) => {
   
     const newUser = new User({ name, email, password });
     await newUser.save();
-    const token = jwt.sign( 
-    { email: newUser.email },
+    const token = jwt.sign(
+    { _id: newUser._id, email: newUser.email },
     process.env.JWT_SECRET,
     { expiresIn: '1h' }
   );
@@ -51,7 +51,7 @@ const user = await User.findOne({ email });
   }
 
   const token = jwt.sign(
-    { email: user.email },
+    { _id: user._id, email: user.email },
     process.env.JWT_SECRET,
     { expiresIn: '1h' }
   )

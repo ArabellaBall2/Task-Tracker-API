@@ -1,0 +1,272 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f6f9;
+  color: #333;
+  margin: 0;
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  box-sizing: border-box;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Main Container */
+.container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  width: 100%;
+}
+
+/* Header */
+header {
+  background: #00319b;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+  margin-bottom: 25px;
+}
+
+header h1 {
+  margin-bottom: 10px;
+}
+
+header button {
+  background: white;
+  color: #00319b;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+header button:hover {
+  background: #e5e7eb;
+}
+
+/* Login Form */
+.login-form {
+  background: linear-gradient(135deg, #eef4ff 0%, #dfeeff 100%);
+  color: #00319b;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 49, 155, 0.12);
+  margin-bottom: 20px;
+  margin-top: 20px;
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.login-form h2 {
+  margin: 0 0 12px;
+  text-align: center;
+  font-size: 24px;
+  color: #000B24;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 12px 14px;
+  margin: 8px 0 12px;
+  border: 1px solid #c8d3e8;
+  border-radius: 8px;
+  background-color: #f8fafc;
+  color: #333;
+  box-sizing: border-box;
+}
+
+.login-form input:-webkit-autofill,
+.login-form input:-webkit-autofill:hover,
+.login-form input:-webkit-autofill:focus,
+.login-form input:-webkit-autofill:active,
+form input:-webkit-autofill,
+form input:-webkit-autofill:hover,
+form input:-webkit-autofill:focus,
+form input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #f8fafc inset !important;
+  -webkit-text-fill-color: #333 !important;
+  background-color: #f8fafc !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.login-form button {
+  width: 100%;
+  margin-top: 6px;
+  font-weight: 600;
+}
+
+/* Task Form */
+form {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.1);
+}
+
+form h2 {
+  margin-bottom: 15px;
+}
+
+form input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #d7deea;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #f8fafc;
+  color: #333;
+}
+
+button {
+  background: #00319b;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.auth-buttons{
+display:flex;
+gap:10px;
+justify-content:center;
+margin:20px 0;
+}
+
+button:hover {
+  background: #010103;
+}
+
+/* Task List */
+ul {
+  list-style: none;
+}
+
+li {
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.08);
+}
+
+li span {
+  flex: 1;
+  font-size: 17px;
+}
+
+li button {
+  margin-left: 8px;
+}
+
+.task-actions {
+  display: flex;
+  gap: 8px;
+  margin-left: auto;
+}
+
+.task-edit-input {
+  flex: 1;
+  padding: 8px 10px;
+  border: 1px solid #d7deea;
+  border-radius: 6px;
+  font-size: 16px;
+  margin-right: 8px;
+}
+
+.task-checkbox {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.task-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.task-checkbox .checkmark {
+  width: 18px;
+  height: 18px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  background-color: #f9fafb;
+  display: inline-block;
+  position: relative;
+}
+
+.task-checkbox input:checked + .checkmark {
+  background-color: #00319b;
+  border-color: #00319b;
+}
+
+.task-checkbox input:checked + .checkmark::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 1px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.task-completed {
+  text-decoration: line-through;
+  color: #9ca3af;
+}
+
+/* Messages */
+.message {
+  background: #eef4ff;
+  color: #00319b;
+  padding: 12px;
+  border-radius: 8px;
+  margin: 15px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: auto;
+  color: #666;
+  font-size: 14px;
+
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  header {
+    padding: 15px;
+  }
+
+  li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  li button {
+    margin: 8px 0 0;
+    width: 100%;
+  }
+}

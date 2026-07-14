@@ -26,25 +26,29 @@ router.post("/", authenticateToken, async (req, res) => {
 // Update a task
 router.put("/:id", authenticateToken, async (req, res) => {
   const { title, description, completed } = req.body;
-  const task = await Task.findById(req.params.id);
+  const task = await Task.findOne({ _id: req.params.id, user: req.user._id });
   if (!task) {
     return res.status(404).json({ message: "Task not found" });
   }
-  task.title = title;
-  task.description = description;
-  task.completed = completed;
+
+  task.title = title ?? task.title;
+  task.description = description ?? task.description;
+  task.completed = completed ?? task.completed;
   await task.save();
   res.json(task);
 });
 
 // Delete a task
 router.delete("/:id", authenticateToken, async (req, res) => {
-  const task = await Task.findById(req.params.id);
-  if (!task) {
-    return res.status(404).json({ message: "Task not found" });
+  try {
+    const result = await Task.deleteOne({ _id: req.params.id, user: req.user._id });
+    if (result.deletedCount === 0) {
+      return res.status(404).json({ message: "Task not found" });
+    }
+    return res.json({ message: "Task deleted" });
+  } catch (error) {
+    return res.status(500).json({ message: "Error deleting task" });
   }
-  await task.remove();
-  res.json({ message: "Task deleted" });
 });
 
 

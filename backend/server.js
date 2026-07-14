@@ -15,6 +15,10 @@ require("./config/db");
 const app = express();
 app.use(bodyParser.json());
 
+// Enable CORS so frontend dev server can call this API
+const cors = require('cors');
+app.use(cors());
+
 
 
 app.use(express.json());
