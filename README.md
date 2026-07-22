@@ -48,10 +48,53 @@ The Task Tracker is a full-stack web application that allows users to create an 
 * DELETE - Delete task - /api/tasks/:id
 
 ## Running Instructions
+### Prerequisites
+Before running this project, install:
+Node.js (version 18 or later recommended)
+npm
+Git
+A MongoDB Atlas account or a local MongoDB database
 ### Backend 
-For running, using a PowerShell terminal, change directories into the backend folder. Then, run `npm start` in the command line.
+1. Clone the repository
+git clone https://github.com/ArabellaBall2/your-repository-name.git
+2. Navigate into the project directory
+cd your-repository-name
+3. Install backend dependencies
+cd backend
+npm install
+4. Configure environment variables
+
+Inside the backend folder, create a file named .env.
+
+Copy the values from the provided .env.example file:
+```
+MONGO_URI=mongodb+srv://username:password@cluster.mongodb.net/myDatabase
+PORT=3000
+JWT_SECRET=your_super_secret_key_here
+DATABASE_NAME=myDatabase
+```
+
+Do not commit your .env file or any sensitive credentials to GitHub.
+
+5. Start the backend server
+npm start
+
+The backend will run on:
+
+http://localhost:3000
 ### Frontend
-For running, using a PowerShell terminal, change directories into the frontend/vite-project folder. Then, run `npm run dev` in the command line.
+Open a second terminal window.
+
+1. Navigate to the frontend folder
+cd frontend/vite-project
+2. Install frontend dependencies
+npm install
+3. Start the development server
+npm run dev
+
+The frontend will typically be available at:
+
+http://localhost:5173
 
 ## Required environment variables 
 
