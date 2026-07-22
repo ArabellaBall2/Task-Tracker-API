@@ -50,10 +50,10 @@ The Task Tracker is a full-stack web application that allows users to create an 
 ## Running Instructions
 ### Prerequisites
 Before running this project, install:
-Node.js (version 18 or later recommended)
-npm
-Git
-A MongoDB Atlas account or a local MongoDB database
+* Node.js (version 18 or later recommended)
+* npm
+* Git
+* A MongoDB Atlas account or a local MongoDB database
 ### Backend 
 1. Clone the repository
 git clone https://github.com/ArabellaBall2/your-repository-name.git
